@@ -1,0 +1,135 @@
+    <!DOCTYPE html>
+    <html lang ="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name ="viewport" content = "width=device-width , initial-scale=1.0">
+                <title>CanSat Ground Control Station</title>
+                <link rel="stylesheet" href="style.css">
+                <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+        </head>
+        <body>
+            <header>
+                <h1>CanSat Ground Control Station</h1>
+            </header>
+            <section id="top-bar">
+                <button id = "start-btn">Start Telemetry</button>
+                <button id ="stop-btn">Stop Telemetry</button>
+                <button id ="export-btn">Export CSV</button>
+                <button id ="exportG-btn">Export Graph</button>
+                <button id="sync-time-btn">Sync Time</button>
+                <button id="reset-time-btn">Reset Time</button>
+            </section>
+            <div class="top-panels">
+            <section id="Mission-Control">
+                <h2>Mission Control</h2>
+                <button>Separate Payload</button>
+                <button>Deploy Parachute</button>
+                <button>Activate Backup</button>
+            </section>
+            <section id="telemetry">
+                <h2>Telemetry</h2>
+                <div>
+                    <p>Altitude:
+                        <span id="altitude">0</span>
+                    </p>
+                    <p>Descent Rate : <span id ="descent-rate">0</span>m/s</p>
+                    <p>Temperature:
+                        <span id="temperature">0</span>
+                    </p>
+                    <p>Pressure :
+                    <span id="pressure">0</span>
+                    </p>
+
+                    <p>Battery :
+                    <span id="battery">0</span>
+                    </p>
+
+                    <p>Latitude :
+                    <span id="latitude">0</span>
+                    </p>
+
+                    <p>Longitude :
+                    <span id="longitude">0</span>
+                    </p>
+
+                    <p>Roll :
+                    <span id="roll">0</span>
+                    </p>
+
+                    <p>Pitch :
+                    <span id="pitch">0</span>
+                    </p>
+
+                    <p>Yaw :
+                    <span id="yaw">0</span>
+                    </p>
+
+                    <p>Packet Number :
+                    <span id="packet">0</span>
+                    </p>
+
+                    <p>Mission Time :
+                    <span id="mission-time">00:00:00</span>
+                    </p>
+                </div>
+            </section>
+            <section id="error-code">
+                <h2>Error Code</h2>
+                <h1 id="error-display">0000</h1>
+            </section>
+            </div>
+        
+            <section id="graphs">
+
+            <h2>Graphs</h2>
+
+            <canvas id="altitude-graph"></canvas>
+
+            <canvas id="temperature-graph">
+                Temperature Graph
+            </canvas>
+
+            <canvas id="pressure-graph">
+                Pressure Graph
+            </canvas>
+
+            <canvas id="battery-graph">
+                Battery Graph
+            </canvas>
+
+        </section>
+        <div class="bottom-panels">
+        <section id="tracking-map">
+
+            <h2>Tracking Map</h2>
+
+            <div id="map"></div>
+
+        </section>
+
+        <section id="orientation">
+
+            <h2>Orientation</h2>
+
+            <div id="orientation-model"></div>
+
+        </section>
+        <section id="video">
+            <h2>Live Video</h2>
+            <video id="camera" autoplay playsinline></video>
+            <br><br>
+            <div class="camera-controls">
+                <select id="camera-select"></select>
+                <button id="start-camera">Start Camera</button>
+                <button id="stop-camera">Stop Camera</button>
+            </div>
+        </section>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="script.js"></script>
+        </body>
+    </html>
